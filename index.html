@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Jamie Cabezas | Home</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="stars">
+  <!-- 50 stars for animation -->
+  <div class="star" style="top:10%; left:5%; animation-duration:20s;"></div>
+  <div class="star" style="top:20%; left:30%; animation-duration:15s;"></div>
+  <div class="star" style="top:50%; left:80%; animation-duration:25s;"></div>
+  <div class="star" style="top:70%; left:10%; animation-duration:30s;"></div>
+  <div class="star" style="top:90%; left:50%; animation-duration:18s;"></div>
+  <!-- add more stars similarly if you like -->
+</div>
+
+<header class="fade-in">
+  <h1>Jamie Cabezas</h1>
+  <p>Fantasy & Supernatural Storyteller</p>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="book.html">Book</a>
+  </nav>
+</header>
+
+<section class="fade-in delay">
+  <div class="card">
+    <h2>Welcome</h2>
+    <p>
+      Step into worlds where wishes have consequences and reality bends into the supernatural.
+      Discover stories filled with emotion, danger, and transformation.
+    </p>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Jamie Cabezas</p>
+</footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+  const links = document.querySelectorAll("a");
+  links.forEach(link => {
+    const href = link.getAttribute("href");
+    if(href && !href.startsWith("http")){
+      link.addEventListener("click", function(e){
+        e.preventDefault();
+        document.body.classList.add("fade-out");
+        setTimeout(()=>{window.location=href},500);
+      });
+    }
+  });
+});
+</script>
+
+</body>
+</html>
