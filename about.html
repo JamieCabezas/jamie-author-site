@@ -37,20 +37,22 @@
 
 <!-- ===== DYNAMIC STARS SCRIPT ===== -->
 <script>
-const starsContainer = document.createElement("div");
-starsContainer.classList.add("stars");
-document.body.prepend(starsContainer);
+document.addEventListener("DOMContentLoaded", function() {
+  const starsContainer = document.createElement("div");
+  starsContainer.classList.add("stars");
+  document.body.prepend(starsContainer);
 
-const starCount = 100;
-for(let i=0;i<starCount;i++){
-  const star = document.createElement("div");
-  star.classList.add("star");
-  star.style.top = Math.random()*100 + "%";
-  star.style.left = Math.random()*100 + "%";
-  star.style.width = star.style.height = Math.random()*2+1 + "px";
-  star.style.animationDuration = (Math.random()*20 + 10) + "s";
-  starsContainer.appendChild(star);
-}
+  const starCount = 100;
+  for(let i=0;i<starCount;i++){
+    const star = document.createElement("div");
+    star.classList.add("star");
+    star.style.top = Math.random()*100 + "%";
+    star.style.left = Math.random()*100 + "%";
+    star.style.width = star.style.height = Math.random()*2+1 + "px";
+    star.style.animationDuration = (Math.random()*20 + 10) + "s";
+    starsContainer.appendChild(star);
+  }
+});
 </script>
 
 </body>
