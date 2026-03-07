@@ -7,15 +7,6 @@
 </head>
 <body>
 
-<div class="stars">
-  <!-- Optional: Add stars like in homepage -->
-  <div class="star" style="top:10%; left:5%; animation-duration:20s;"></div>
-  <div class="star" style="top:40%; left:30%; animation-duration:15s;"></div>
-  <div class="star" style="top:70%; left:80%; animation-duration:25s;"></div>
-  <div class="star" style="top:85%; left:15%; animation-duration:30s;"></div>
-  <div class="star" style="top:60%; left:50%; animation-duration:18s;"></div>
-</div>
-
 <header class="fade-in">
   <h1>About the Author</h1>
 
@@ -43,6 +34,24 @@
 <footer>
   <p>© 2026 Jamie Cabezas</p>
 </footer>
+
+<!-- ===== DYNAMIC STARS SCRIPT ===== -->
+<script>
+const starsContainer = document.createElement("div");
+starsContainer.classList.add("stars");
+document.body.prepend(starsContainer);
+
+const starCount = 100;
+for(let i=0;i<starCount;i++){
+  const star = document.createElement("div");
+  star.classList.add("star");
+  star.style.top = Math.random()*100 + "%";
+  star.style.left = Math.random()*100 + "%";
+  star.style.width = star.style.height = Math.random()*2+1 + "px";
+  star.style.animationDuration = (Math.random()*20 + 10) + "s";
+  starsContainer.appendChild(star);
+}
+</script>
 
 </body>
 </html>
